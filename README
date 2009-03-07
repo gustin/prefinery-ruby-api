@@ -1,0 +1,45 @@
+PrefineryBetaFu
+===============
+
+Prefinery (http://www.prefinery.com) helps you launch a private beta in minutes.  
+Prefinery collects email addresses, generates invitation codes, and sends 
+invitations for your web beta.  Your customers never leave your site and 
+e-mail invitations are sent from your address.
+
+PrefineryBetaFu gets Prefinery integrated into your Rails website in seconds.
+
+
+Installation
+============
+
+  script/plugin install git://github.com/compulsivo/prefinery-beta-fu.git
+
+
+Configuration
+=============
+
+Sign up for a free account on http://www.prefinery.com and create a new web beta.  Once you 
+do this, you'll configure PrefineryBetaFu using the id of the beta you just created.
+
+You should have something like this in config/initializers/prefinery.rb.
+
+  Prefinery.configure do |config|
+    config.subdomain = 'compulsivo'
+    config.beta = '4'
+  end
+
+
+Examples
+========
+
+To include Prefinery's invitation javascript on your site's signup page:
+
+<%= prefinery_invitation_javascript %>
+
+To place a link on your site's signup page which will launch the Prefinery invitation widget:
+
+<%= link_to_prefinery_invitation 'Sign up for the beta now!', '#' %>
+
+
+
+Copyright (c) 2009 Compulsivo, Inc. Released under the MIT license
