@@ -1,8 +1,11 @@
+
+
 Configuration
 =============
 
-Sign up for a free account on http://www.prefinery.com and create a new web beta.  Once you 
-do this, you'll configure PrefineryBetaFu using the id of the beta you just created.
+Sign up for a free account on http://www.prefinery.com and 
+create a new web beta.  Once you do this, you'll configure 
+PrefineryBetaFu using the id of the beta you just created.
 
 You should have something like this in config/initializers/prefinery.rb.
 
