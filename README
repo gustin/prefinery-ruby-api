@@ -54,13 +54,13 @@ Creating a tester
 
  tester = Prefinery::Tester.new(:beta_id => 74)
  tester.email = 'justin@prefinery.com'
- tester.profile = {:first_name = 'Justin', :last_name => 'Britten'}
+ tester.profile = {:first_name => 'Justin', :last_name => 'Britten'}
  tester.save
 
 Updating a tester
 
  tester = Prefinery::Tester.find(1259, :params => { :beta_id => 74 })
- tester.profile = {:city = 'Austin', :state => 'TX'}
+ tester.profile = {:city => 'Austin', :state => 'TX'}
  tester.save
 
 

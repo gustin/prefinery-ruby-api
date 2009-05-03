@@ -108,13 +108,13 @@ module Prefinery
   #  tester.email = 'justin@prefinery.com'
   #  tester.status = 'active'
   #  tester.invitation_code = 'TECHCRUNCH'
-  #  tester.profile = {:first_name = 'Justin', :last_name => 'Britten'}
+  #  tester.profile = {:first_name => 'Justin', :last_name => 'Britten'}
   #  tester.save
   #
   # Updating a tester
   #
   #  tester = Prefinery::Tester.find(1259, :params => { :beta_id => 74 })
-  #  tester.profile = {:city = 'Austin', :state => 'TX'}
+  #  tester.profile = {:city => 'Austin', :state => 'TX'}
   #  tester.save
   #
   # Deleting a tester
