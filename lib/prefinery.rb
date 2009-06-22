@@ -26,6 +26,8 @@ module Prefinery
       yield self
       resources.each do |klass|
         klass.site = klass.site_format % (host_format % [protocol, host, port])
+        klass.user = api_key
+        klass.password = "X"
       end
     end
     
@@ -130,13 +132,4 @@ module Prefinery
     end
   end
   
-end
-
-module ActiveResource
-  class Connection
-    private
-      def authorization_header
-        (Prefinery.api_key ? { 'Authorization' => 'Basic ' + ["#{Prefinery.api_key}:X"].pack('m').delete("\r\n") } : {})
-      end
-  end
 end
