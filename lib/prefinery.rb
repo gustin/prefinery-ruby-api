@@ -130,6 +130,16 @@ module Prefinery
     def profile=(profile_attributes)
       attributes['profile'] = profile_attributes
     end
+    
+    def verified?(invitation_code)
+      begin
+        get(:verify, :invitation_code => invitation_code)
+        true
+      rescue
+        false
+      end
+    end
+    
   end
   
 end
