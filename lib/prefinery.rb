@@ -10,7 +10,7 @@
 #
 #
 # Read the docs at:
-# http://www.prefinery.com/api
+# http://app.prefinery.com/api
 #
 
 require 'rubygems'
@@ -124,6 +124,10 @@ module Prefinery
   #  tester = Prefinery::Tester.find(1259, :params => { :beta_id => 74 })
   #  tester.destroy
   #
+  # Check-in a tester
+  #
+  #  tester = Prefinery::Tester.find(1259, :params => { :beta_id => 74 })
+  #  tester.checkin
   class Tester < Base
     site_format << '/betas/:beta_id'
     
@@ -140,6 +144,22 @@ module Prefinery
       end
     end
     
+    def checkin
+      begin
+        post(:checkin)
+        true
+      rescue
+        false
+      end
+    end
+    
+  end
+  
+  # Check-in a tester by email address
+  #
+  #  Prefinery::Checkin.create(:beta_id => 74, :email => 'justin@prefinery.com')
+  class Checkin < Base
+    site_format << '/betas/:beta_id'
   end
   
 end
