@@ -13,9 +13,11 @@
 # http://app.prefinery.com/api
 #
 
-require 'rubygems'
-require 'activesupport'
-require 'activeresource'
+if Rails::VERSION::STRING != '3.0.0.beta' 
+  require 'rubygems'
+  require 'activesupport'
+  require 'activeresource'
+end
 
 module Prefinery
 
